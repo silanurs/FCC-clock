@@ -15,17 +15,17 @@
             <div>
                 <div class="break-length">Break Length</div>
                 <div class="arrange">
-                    <i class="fa-solid fa-arrow-down"></i>
-                    <span>5</span>
-                    <i class="fa-solid fa-arrow-up"></i>
+                    <i class="fa-solid fa-arrow-down break-decrement"></i>
+                    <span class="break-length">5</span>
+                    <i class="fa-solid fa-arrow-up break-increment"></i>
                 </div>
             </div>
             <div >
                 <div class="session-length">Session Length</div>
                 <div class="arrange">
-                    <i class="fa-solid fa-arrow-down"></i>
-                    <span>25</span>
-                    <i class="fa-solid fa-arrow-up"></i>
+                    <i class="fa-solid fa-arrow-down session-decrement"></i>
+                    <span class="session-length">25</span>
+                    <i class="fa-solid fa-arrow-up session-increment"></i>
                 </div>
             </div>
         </div>
@@ -33,14 +33,14 @@
             <div>
                 <div class="session">Session</div>
                 <div class="duration">
-                    <span>25</span><span>:</span><span>00</span></div>
+                    <span class="time-left-minute">25</span><span>:</span><span class="time-left-second">00</span></div>
                 </div>
 
         </div>
         <div id="icons">
-            <i class="fa-solid fa-play"></i>
-            <i class="fa-solid fa-pause"></i>
-            <i class="fa-solid fa-arrows-rotate"></i>
+            <i class="fa-solid fa-play" id="start_stop"></i>
+            <i class="fa-solid fa-pause" id="stop"></i>
+            <i class="fa-solid fa-arrows-rotate" id="reset"></i>
         </div>
     
     </main>
@@ -51,6 +51,6 @@
      <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 
      <!-- Include your custom JavaScript file -->
-     <script src="script.js"></script>
+     <script type="module" src="script.js" ></script>
 </body>
 </html>
