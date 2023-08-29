@@ -42,6 +42,11 @@ $(document).ready(function(){
         $(".session-length").text(`${newSession}`)
         $(".time-left-minute").text(`${newSession}`)
     })
+    $("#reset").click(function(){
+        $(".session-length").text('25');
+        $(".break-length").text("5");
+        $(".time-left-minute").text("25")
+    })
     
 
 })
