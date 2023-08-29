@@ -29,6 +29,7 @@ $(document).ready(function(){
             newSession= sessionVal-1;
         }
         $(".session-length").text(`${newSession}`)
+        $(".time-left-minute").text(`${newSession}`)
     })
     $(".session-increment").click(function(){
         let sessionVal = Number($(".session-length").text())
@@ -39,6 +40,8 @@ $(document).ready(function(){
             newSession= sessionVal+1;
         }
         $(".session-length").text(`${newSession}`)
+        $(".time-left-minute").text(`${newSession}`)
     })
+    
 
 })
