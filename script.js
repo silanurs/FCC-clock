@@ -29,10 +29,11 @@ $(document).ready(function(){
         }else{
             newSession= sessionVal-1;
         }
+        $(".session-length").text(`${newSession}`)
         if (newSession <10){
             newSession = "0" + newSession;
         }
-        $(".session-length").text(`${newSession}`)
+        
         $(".time-left-minute").text(`${newSession}`)
     })
     $(".session-increment").click(function(){
@@ -44,6 +45,9 @@ $(document).ready(function(){
             newSession= sessionVal+1;
         }
         $(".session-length").text(`${newSession}`)
+        if (newSession <10){
+            newSession = "0" + newSession;
+        }
         $(".time-left-minute").text(`${newSession}`)
     })
     $("#reset").click(function(){
@@ -72,6 +76,8 @@ $(document).ready(function(){
  $("button").click(function(){
     let minute = $(".time-left-minute").text();
     let newMin
+   
+    let audio = new Audio("alarmclock.mp3")
     function setMinute(){
         if($(".time-left-second").text()=="00"){
             newMin=minute-1;
@@ -85,10 +91,22 @@ $(document).ready(function(){
             let breakMin= "0" + $(".break-length").text()
             $(".time-left-minute").text(breakMin);
             $(".time-left-second").text("00")
+            audio.play()
+            
         }
+        if($(".session").text()=="Break" && $(".time-left-minute").text()=="00" && $(".time-left-second").text()=="00"){
+            $(".session").text("Session");
+            let sessionMin= $(".session-length").text()
+            $(".time-left-minute").text(sessionMin);
+            $(".time-left-second").text("00")
+            audio.play()
+            
+        }
+       
+
     }
         $("button").attr("disabled", true)
-
+       
         
         let secondInterval = setInterval(setSecond, 1000)
         let minuteInterval=setInterval(setMinute, 1000)
