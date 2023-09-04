@@ -10,6 +10,11 @@ body{
     color:rgb(138, 29, 29);
     font-family: "Aldrich", sans-serif;
 }
+button{
+    background-color: rgb(198, 161, 139);
+    color: rgb(138, 29, 29);
+    border:none;
+}
 main{
     display:grid;
     justify-items:center;
