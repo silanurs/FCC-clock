@@ -9,6 +9,7 @@ $(document).ready(function(){
             newBreak=breakVal - 1;
         }
         $(".break-length").text(`${newBreak}`)
+        $(".time-left-second").text("00")
     })
     $(".break-increment").click(function(){
         let breakVal = Number($(".break-length").text());
@@ -20,6 +21,7 @@ $(document).ready(function(){
 
         }
         $(".break-length").text(`${newBreak}`)
+        $(".time-left-second").text("00")
     })
     $(".session-decrement").click(function(){
         let sessionVal = Number($(".session-length").text())
@@ -33,7 +35,7 @@ $(document).ready(function(){
         if (newSession <10){
             newSession = "0" + newSession;
         }
-        
+        $(".time-left-second").text("00")
         $(".time-left-minute").text(`${newSession}`)
     })
     $(".session-increment").click(function(){
@@ -49,6 +51,7 @@ $(document).ready(function(){
             newSession = "0" + newSession;
         }
         $(".time-left-minute").text(`${newSession}`)
+        $(".time-left-second").text("00")
     })
     $("#reset").click(function(){
         $(".session-length").text('25');
@@ -73,7 +76,7 @@ $(document).ready(function(){
         $(".time-left-second").text(`${newSec}`)
         
         }
- $("button").click(function(){
+ $("#start").click(function(){
     let minute = $(".time-left-minute").text();
     let newMin
    
@@ -120,13 +123,5 @@ $(document).ready(function(){
    
   
     })
-    if($(".session").text()=="Session" && $(".time-left-minute").text()=="00" && $(".time-left-second").text()=="00"){
-        $(".session").text("Break");
-        let breakMin= "0" + $(".break-length").text()
-        $(".time-left-minute").text(breakMin);
-        $(".time-left-second").text("00")
-    }
-   
-    
 
 })
